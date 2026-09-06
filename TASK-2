@@ -1,0 +1,40 @@
+-- ================= TASK 2 =================
+
+CREATE TABLE Courses (
+    Course_ID    VARCHAR(10) PRIMARY KEY,
+    Course_Name  VARCHAR(30) NOT NULL,
+    Course_Fee   INT NOT NULL CHECK (Course_Fee > 0)
+);
+
+CREATE TABLE Students (
+    Student_ID       INT PRIMARY KEY,
+    Student_Name     VARCHAR(50) NOT NULL,
+    Email            VARCHAR(50) UNIQUE,
+    Phone            CHAR(10) UNIQUE,
+    Age              INT CHECK (Age >= 18),
+    Course_ID        VARCHAR(10),
+    Enrollment_Date  DATE NOT NULL,
+    Marks            DECIMAL(10,2) NOT NULL,
+    Student_Status   VARCHAR(20) DEFAULT 'Active',
+    FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID)
+);
+
+-- Parent table filled first
+INSERT INTO Courses VALUES
+    ('C101', 'Science',  45000),
+    ('C102', 'Commerce', 50000),
+    ('C103', 'Arts',     20000);
+
+-- All columns supplied
+INSERT INTO Students VALUES
+    (1, 'Aarav',  'aarav@gmail.com',  '9876543210', 20, 'C101', '2022-08-30', 85.00, 'Graduated'),
+    (2, 'Aarohi', 'aarohi@gmail.com', '1234567890', 22, 'C102', '2025-06-30', 80.00, 'SY');
+
+-- Status column skipped, so DEFAULT 'Active' is applied
+INSERT INTO Students
+    (Student_ID, Student_Name, Email, Phone, Age, Course_ID, Enrollment_Date, Marks)
+VALUES
+    (3, 'Shubh', 'shubh@gmail.com', '5432167890', 25, 'C103', '2026-07-18', 90.00);
+
+SELECT * FROM Courses;
+SELECT * FROM Students;
