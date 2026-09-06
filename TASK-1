@@ -1,128 +1,146 @@
-Task 1
+TASK 1 - DBMS & SQL BASICS
+==========================
 
-1. What is Data?
--- Data is a collection of raw facts and information that can be stored, processed, and analyzed to generate meaningful information.
--- Data means raw facts or values that describe something.
+Q1. Define Data.
+Ans: Data refers to unprocessed facts, figures, symbols or values gathered about a
+     person, object or event. On its own it carries no meaning; once it is stored and
+     processed it turns into useful information.
 
-2. What is a Database?
--- A database is an organized collection of related data that can be stored, accessed, managed, and retrieved efficiently.
--- A database is a place where we store and organize data so that we can easily access and manage it.
+Q2. Define a Database.
+Ans: A database is a systematically arranged collection of related data kept together
+     in one place so that it can be searched, updated and retrieved without difficulty.
+     In simple words - it is a storehouse where data is kept in an organised form.
 
-3. What is a Database Management System (DBMS)?
--- A Database Management System (DBMS) is software used to create, store, organize, manage, update,and retrieve data from databases.
--- A DBMS is software that helps us manage databases and the data stored inside them.
+Q3. What do you mean by DBMS?
+Ans: DBMS stands for Database Management System. It is the software layer that sits
+     between the user and the database and allows us to build, store, arrange, modify
+     and fetch data. Examples: MySQL, Oracle, MS Access, MongoDB.
 
-4. What is a Relational Database Management System (RDBMS)?
--- A RDBMS is a type of DBMS that stores data in tables and allows relationships to be established between related tables.
--- A RDBMS stores data in tables and connects related tables using relationships.
+Q4. What do you mean by RDBMS?
+Ans: RDBMS stands for Relational Database Management System. It is a category of DBMS
+     in which data is kept in the form of tables (rows and columns) and one table can
+     be linked with another through relationships.
 
-5. What is the difference between DBMS and RDBMS?
-   |                 DBMS                     |                     RDBMS                                           |
--- | ---------------------------------------- | ----------------------------------------------- |
--- | Database Management System               | Relational Database Management System           |
--- | Manages databases                        | Manages relational databases                    |
--- | Relationships are not required           | Supports relationships between tables           |
--- | Data can be stored in different forms    | Data is primarily stored in tables              |
--- | Suitable for simpler database systems    | Suitable for structured and large-scale systems |
--- | Example: SQL Server can be used as a DBMS| MySQL, Oracle, PostgreSQL                       |
+Q5. Distinguish between DBMS and RDBMS.
+Ans:
+     Basis            | DBMS                          | RDBMS
+     -----------------|-------------------------------|--------------------------------
+     Full form        | Database Management System    | Relational DBMS
+     Data storage     | File, hierarchical or other   | Strictly in table format
+                      | formats                       |
+     Relationship     | Not compulsory                | Tables are linked using keys
+     Normalization    | Generally not applied         | Applied to reduce redundancy
+     Data volume      | Fits small / simple systems   | Handles large, structured data
+     Keys             | Rarely used                   | Primary & Foreign keys used
+     Examples         | MS Access, file systems       | MySQL, Oracle, PostgreSQL
 
--- DBMS → Manage data
--- RDBMS → Manage data + relationships between tables
+     Short point: DBMS only manages data, whereas RDBMS manages data along with the
+     relationships between tables.
 
-6. What is SQL?
--- SQL = Structured Query Language
--- SQL is a standard language used to communicate with relational databases to create, store, 
-   retrieve, update, and manage data.
--- SQL is the language we use to communicate with a database.
+Q6. What is SQL?
+Ans: SQL is short for Structured Query Language. It is the standard language through
+     which we talk to a relational database - creating tables, inserting values,
+     fetching records, updating them and removing them.
 
-7. What are the advantages of using a Database?
--- Organized data – Stores data in a structured manner.
-   Easy data access – Makes it easy to find and retrieve information.
-   Data storage – Can store large amounts of data.
-   Data accuracy – Helps maintain accurate and consistent data.
-   Data security – Helps protect data from unauthorized access.
-   Easy updating – Data can be easily added, modified, or deleted.
+Q7. State the benefits of maintaining a Database.
+Ans: 1) Data stays in a neat and structured form.
+     2) Required information can be located quickly.
+     3) A very large volume of data can be kept in one place.
+     4) Accuracy and consistency of data is maintained.
+     5) Unauthorised users can be kept away from the data.
+     6) Adding, changing or removing data becomes simple.
 
-8. What are the advantages of using DBMS?
--- Data security – Controls who can access the data.
-   Data integrity – Helps maintain accurate and valid data.
-   Reduces data redundancy – Minimizes unnecessary duplicate data.
-   Backup and recovery – Helps recover data if it is lost or damaged.
-   Multiple users – Allows multiple users to access data at the same time.
-   Easy data management – Makes inserting, updating, deleting, and retrieving data easier.
+Q8. State the benefits of a DBMS.
+Ans: 1) Security - decides which user is allowed to see or change what.
+     2) Integrity - keeps the stored values valid and correct.
+     3) Less redundancy - avoids storing the same data again and again.
+     4) Backup & recovery - data can be restored if it gets damaged or lost.
+     5) Concurrent access - many users can work on the data at the same time.
+     6) Simplified handling - insert, update, delete and search operations become easy.
 
-9. What are the advantages of using RDBMS?
--- Table-based structure – Data is stored in rows and columns.
-   Relationships between tables – Tables can be connected using Primary Keys and Foreign Keys.
-   Reduces data duplication – Normalization helps avoid unnecessary repeated data.
-   Data integrity – Constraints such as Primary Key, Foreign Key, and NOT NULL help maintain valid data.
-   Easy querying – SQL can be used to retrieve and analyze data.
-   Better data consistency – Changes can be managed across related tables.
+Q9. State the benefits of an RDBMS.
+Ans: 1) Data is arranged neatly in rows and columns.
+     2) Related tables can be joined using Primary Key and Foreign Key.
+     3) Normalization cuts down repeated data.
+     4) Constraints such as PRIMARY KEY, FOREIGN KEY and NOT NULL protect data validity.
+     5) SQL queries make searching and analysis easy.
+     6) A change made in one table can be reflected properly across related tables.
 
-10. What is a Table in a Database?
---  A table is a structured collection of related data organized into rows and columns.
+Q10. What is a Table?
+Ans: A table is the basic storage unit of a relational database in which related data
+     is arranged horizontally in rows and vertically in columns.
 
-11. What is a Record in a Database?
---  A record is a complete set of information about one particular item or person in a database. It is usually represented by one row in a table.
---  Record means Row.
+Q11. What is a Record?
+Ans: A record holds the complete details of a single entity - one student, one employee,
+     one product. In a table, one record = one row (also called a tuple).
 
-12. What is a Field in a Database?
---  A field is a single piece of information or attribute in a database. It is usually represented by a column in a table.
---  Field means Column.
+Q12. What is a Field?
+Ans: A field represents one particular attribute or property of the data, for example
+     Name, Age or City. In a table, one field = one column.
 
-13. What is a Primary Key?
---  A Primary Key is a column (or combination of columns) that uniquely identifies each record in a table.
---  A table can have only one Primary Key.
+Q13. Explain Primary Key.
+Ans: A Primary Key is that column, or set of columns, whose value is different for every
+     row and is never left blank. It is used to identify each record uniquely. Only one
+     Primary Key is permitted per table.
 
-14. What is a Foreign Key?
---  A Foreign Key is a column in one table that connects it to another table by referring to the Primary Key of that table.
---  Creates a relationship between tables.
+Q14. Explain Foreign Key.
+Ans: A Foreign Key is a column of one table which points to the Primary Key of some other
+     table. It is the element that actually builds the relationship between two tables.
 
-15. What is a Constraint in SQL?
---  Constraints are rules applied to columns in a table to control the type of data that can be stored and maintain data accuracy.
+Q15. What is meant by a Constraint?
+Ans: Constraints are the conditions or rules applied on a column (or on the whole table)
+     that restrict the kind of values which may be entered, so that wrong data does not
+     get stored.
 
-16. What are the different types of SQL Constraints?
---  NOT NULL, UNIQUE, PRIMARY KEY, CHECK, DEFAULT, AUTO_INCREMENT, FOREIGN KEY.
+Q16. List the constraints available in SQL.
+Ans: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT and AUTO_INCREMENT.
 
-17. What is the purpose of the PRIMARY KEY constraint?
---  Uniquely identifies each record.
+Q17. Why is the PRIMARY KEY constraint used?
+Ans: To recognise every row of a table uniquely; it does not allow duplicate or NULL
+     values.
 
-18. What is the purpose of the FOREIGN KEY constraint?
---  Creates a relationship between tables.
+Q18. Why is the FOREIGN KEY constraint used?
+Ans: To join one table with another and to make sure the referenced value really exists
+     in the parent table.
 
-19. What is the purpose of the NOT NULL constraint?
---  Prevents empty/NULL values.
+Q19. Why is the NOT NULL constraint used?
+Ans: To make a column compulsory, i.e. the field cannot be left empty.
 
-20. What is the purpose of the UNIQUE constraint?
---  Prevents duplicate values.
+Q20. Why is the UNIQUE constraint used?
+Ans: To stop the same value from being entered twice in a column.
 
-21. What is the purpose of the CHECK constraint?
---  Ensures values satisfy a condition.
+Q21. Why is the CHECK constraint used?
+Ans: To allow only those values which satisfy a given condition, e.g. CHECK (Age >= 18).
 
-22. What is the purpose of the DEFAULT constraint?
---  Provides a default value when no value is given.
+Q22. Why is the DEFAULT constraint used?
+Ans: To fill a pre-decided value automatically whenever the user does not supply one.
 
-23. What are SQL Commands?
---  SQL commands are instructions used to create, manage, modify, and retrieve data from a database.
+Q23. What are SQL Commands?
+Ans: SQL commands are the instructions given to the database engine to build its
+     structure and to work with the data kept inside it.
 
-24. What is DDL? Name the commands included in DDL.
---  DDL (Data Definition Language) is used to create, modify, and delete the structure of database objects such as tables and databases.
-    CREATE, ALTER, DROP, TRUNCATE, RENAME
+Q24. Explain DDL with its commands.
+Ans: DDL means Data Definition Language. It deals with the structure or design of
+     database objects such as databases, tables and views - not with the values inside.
+     Commands: CREATE, ALTER, DROP, TRUNCATE, RENAME.
 
-25. What is DML? Name the commands included in DML.
---  DML (Data Manipulation Language) is used to add, modify, and delete data stored in a table.
-    INSERT, UPDATE, DELETE
+Q25. Explain DML with its commands.
+Ans: DML means Data Manipulation Language. It works on the actual data present inside
+     the table.
+     Commands: INSERT, UPDATE, DELETE.
 
-26. What is DQL? Which command is used in DQL?
---  DQL (Data Query Language) is used to retrieve data from a table.
-    SELECT
+Q26. Explain DQL with its command.
+Ans: DQL means Data Query Language. It is used only to fetch or display the stored data.
+     Command: SELECT.
 
-27. What is the difference between DELETE, DROP and TRUNCATE?
---  DELETE -   Removes records from a table.
-    DROP -     Permanently deletes an database object, such as table.
-    TRUNCATE - Removes all records but keeps the table structure.
+Q27. Differentiate between DELETE, TRUNCATE and DROP.
+Ans:
+     DELETE   - Removes selected rows; a WHERE clause can be used; table remains.
+     TRUNCATE - Wipes out every row at once, but the empty table structure stays.
+     DROP     - Destroys the entire object (table/database) along with its data.
 
-28. What is the difference between PRIMARY KEY and UNIQUE KEY?
---  PRIMARY KEY - Uniquely identifies each record.
-    UNIQUE -      Prevents duplicate values.      
-                
+Q28. Differentiate between PRIMARY KEY and UNIQUE KEY.
+Ans:
+     PRIMARY KEY - Identifies a row uniquely, NULL is not allowed, only one per table.
+     UNIQUE KEY  - Only prevents duplicate entries, NULL is allowed, a table may have
+                   many unique keys.
