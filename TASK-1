@@ -1,0 +1,128 @@
+Task 1
+
+1. What is Data?
+-- Data is a collection of raw facts and information that can be stored, processed, and analyzed to generate meaningful information.
+-- Data means raw facts or values that describe something.
+
+2. What is a Database?
+-- A database is an organized collection of related data that can be stored, accessed, managed, and retrieved efficiently.
+-- A database is a place where we store and organize data so that we can easily access and manage it.
+
+3. What is a Database Management System (DBMS)?
+-- A Database Management System (DBMS) is software used to create, store, organize, manage, update,and retrieve data from databases.
+-- A DBMS is software that helps us manage databases and the data stored inside them.
+
+4. What is a Relational Database Management System (RDBMS)?
+-- A RDBMS is a type of DBMS that stores data in tables and allows relationships to be established between related tables.
+-- A RDBMS stores data in tables and connects related tables using relationships.
+
+5. What is the difference between DBMS and RDBMS?
+   |                 DBMS                     |                     RDBMS                                           |
+-- | ---------------------------------------- | ----------------------------------------------- |
+-- | Database Management System               | Relational Database Management System           |
+-- | Manages databases                        | Manages relational databases                    |
+-- | Relationships are not required           | Supports relationships between tables           |
+-- | Data can be stored in different forms    | Data is primarily stored in tables              |
+-- | Suitable for simpler database systems    | Suitable for structured and large-scale systems |
+-- | Example: SQL Server can be used as a DBMS| MySQL, Oracle, PostgreSQL                       |
+
+-- DBMS → Manage data
+-- RDBMS → Manage data + relationships between tables
+
+6. What is SQL?
+-- SQL = Structured Query Language
+-- SQL is a standard language used to communicate with relational databases to create, store, 
+   retrieve, update, and manage data.
+-- SQL is the language we use to communicate with a database.
+
+7. What are the advantages of using a Database?
+-- Organized data – Stores data in a structured manner.
+   Easy data access – Makes it easy to find and retrieve information.
+   Data storage – Can store large amounts of data.
+   Data accuracy – Helps maintain accurate and consistent data.
+   Data security – Helps protect data from unauthorized access.
+   Easy updating – Data can be easily added, modified, or deleted.
+
+8. What are the advantages of using DBMS?
+-- Data security – Controls who can access the data.
+   Data integrity – Helps maintain accurate and valid data.
+   Reduces data redundancy – Minimizes unnecessary duplicate data.
+   Backup and recovery – Helps recover data if it is lost or damaged.
+   Multiple users – Allows multiple users to access data at the same time.
+   Easy data management – Makes inserting, updating, deleting, and retrieving data easier.
+
+9. What are the advantages of using RDBMS?
+-- Table-based structure – Data is stored in rows and columns.
+   Relationships between tables – Tables can be connected using Primary Keys and Foreign Keys.
+   Reduces data duplication – Normalization helps avoid unnecessary repeated data.
+   Data integrity – Constraints such as Primary Key, Foreign Key, and NOT NULL help maintain valid data.
+   Easy querying – SQL can be used to retrieve and analyze data.
+   Better data consistency – Changes can be managed across related tables.
+
+10. What is a Table in a Database?
+--  A table is a structured collection of related data organized into rows and columns.
+
+11. What is a Record in a Database?
+--  A record is a complete set of information about one particular item or person in a database. It is usually represented by one row in a table.
+--  Record means Row.
+
+12. What is a Field in a Database?
+--  A field is a single piece of information or attribute in a database. It is usually represented by a column in a table.
+--  Field means Column.
+
+13. What is a Primary Key?
+--  A Primary Key is a column (or combination of columns) that uniquely identifies each record in a table.
+--  A table can have only one Primary Key.
+
+14. What is a Foreign Key?
+--  A Foreign Key is a column in one table that connects it to another table by referring to the Primary Key of that table.
+--  Creates a relationship between tables.
+
+15. What is a Constraint in SQL?
+--  Constraints are rules applied to columns in a table to control the type of data that can be stored and maintain data accuracy.
+
+16. What are the different types of SQL Constraints?
+--  NOT NULL, UNIQUE, PRIMARY KEY, CHECK, DEFAULT, AUTO_INCREMENT, FOREIGN KEY.
+
+17. What is the purpose of the PRIMARY KEY constraint?
+--  Uniquely identifies each record.
+
+18. What is the purpose of the FOREIGN KEY constraint?
+--  Creates a relationship between tables.
+
+19. What is the purpose of the NOT NULL constraint?
+--  Prevents empty/NULL values.
+
+20. What is the purpose of the UNIQUE constraint?
+--  Prevents duplicate values.
+
+21. What is the purpose of the CHECK constraint?
+--  Ensures values satisfy a condition.
+
+22. What is the purpose of the DEFAULT constraint?
+--  Provides a default value when no value is given.
+
+23. What are SQL Commands?
+--  SQL commands are instructions used to create, manage, modify, and retrieve data from a database.
+
+24. What is DDL? Name the commands included in DDL.
+--  DDL (Data Definition Language) is used to create, modify, and delete the structure of database objects such as tables and databases.
+    CREATE, ALTER, DROP, TRUNCATE, RENAME
+
+25. What is DML? Name the commands included in DML.
+--  DML (Data Manipulation Language) is used to add, modify, and delete data stored in a table.
+    INSERT, UPDATE, DELETE
+
+26. What is DQL? Which command is used in DQL?
+--  DQL (Data Query Language) is used to retrieve data from a table.
+    SELECT
+
+27. What is the difference between DELETE, DROP and TRUNCATE?
+--  DELETE -   Removes records from a table.
+    DROP -     Permanently deletes an database object, such as table.
+    TRUNCATE - Removes all records but keeps the table structure.
+
+28. What is the difference between PRIMARY KEY and UNIQUE KEY?
+--  PRIMARY KEY - Uniquely identifies each record.
+    UNIQUE -      Prevents duplicate values.      
+                
