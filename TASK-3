@@ -1,0 +1,186 @@
+-- ===================== TASK 3 =====================
+
+CREATE DATABASE BankingDB;
+USE BankingDB;
+
+CREATE TABLE Customers (
+    Customer_ID        INT PRIMARY KEY AUTO_INCREMENT,
+    Customer_Name      VARCHAR(100) NOT NULL,
+    Email              VARCHAR(100) UNIQUE,
+    Phone              VARCHAR(15),
+    City               VARCHAR(50),
+    Age                INT CHECK (Age >= 18),
+    Gender             CHAR(1),
+    Account_Balance    DECIMAL(12,2) DEFAULT 0.00,
+    Registration_Date  DATE
+);
+
+INSERT INTO Customers
+(Customer_Name, Email, Phone, City, Age, Gender, Account_Balance, Registration_Date)
+VALUES
+('Aarav Sharma',   'aarav.sharma@gmail.com',   '9876543210', 'Mumbai',     25, 'M',  45000.50, '2025-01-10'),
+('Priya Verma',    'priya.verma@gmail.com',    '9876543211', 'Delhi',      28, 'F',  62000.00, '2025-01-15'),
+('Rahul Singh',    'rahul.singh@gmail.com',    '9876543212', 'Pune',       32, 'M',  38500.75, '2025-01-20'),
+('Ananya Gupta',   'ananya.gupta@gmail.com',   '9876543213', 'Bangalore',  24, 'F',  52000.25, '2025-02-02'),
+('Vikram Patel',   'vikram.patel@gmail.com',   '9876543214', 'Ahmedabad',  35, 'M',  75000.00, '2025-02-08'),
+('Neha Joshi',     'neha.joshi@gmail.com',     '9876543215', 'Mumbai',     27, 'F',  41000.50, '2025-02-14'),
+('Rohan Mehta',    'rohan.mehta@gmail.com',    '9876543216', 'Chennai',    30, 'M',  68000.00, '2025-02-20'),
+('Sneha Kapoor',   'sneha.kapoor@gmail.com',   '9876543217', 'Delhi',      26, 'F',  35500.75, '2025-02-25'),
+('Aditya Rao',     'aditya.rao@gmail.com',     '9876543218', 'Hyderabad',  29, 'M',  59000.00, '2025-03-01'),
+('Kavya Nair',     'kavya.nair@gmail.com',     '9876543219', 'Kochi',      31, 'F',  47000.25, '2025-03-05'),
+('Arjun Malhotra', 'arjun.malhotra@gmail.com', '9876543220', 'Pune',       34, 'M',  82000.50, '2025-03-10'),
+('Pooja Shah',     'pooja.shah@gmail.com',     '9876543221', 'Mumbai',     23, 'F',  29000.00, '2025-03-15'),
+('Karan Kapoor',   'karan.kapoor@gmail.com',   '9876543222', 'Delhi',      37, 'M',  91000.75, '2025-03-20'),
+('Meera Iyer',     'meera.iyer@gmail.com',     '9876543223', 'Chennai',    28, 'F',  53000.00, '2025-03-25'),
+('Sahil Khan',     'sahil.khan@gmail.com',     '9876543224', 'Lucknow',    33, 'M',  44000.50, '2025-04-01'),
+('Riya Das',       'riya.das@gmail.com',       '9876543225', 'Kolkata',    25, 'F',  37000.25, '2025-04-05'),
+('Manish Yadav',   'manish.yadav@gmail.com',   '9876543226', 'Jaipur',     40, 'M', 105000.00, '2025-04-10'),
+('Ishita Roy',     'ishita.roy@gmail.com',     '9876543227', 'Kolkata',    29, 'F',  61000.50, '2025-04-15'),
+('Nikhil Bansal',  'nikhil.bansal@gmail.com',  '9876543228', 'Noida',      36, 'M',  78000.00, '2025-04-20'),
+('Simran Kaur',    'simran.kaur@gmail.com',    '9876543229', 'Chandigarh', 27, 'F',  49000.75, '2025-04-25'),
+('Varun Sethi',    'varun.sethi@gmail.com',    '9876543230', 'Delhi',      31, 'M',  56000.00, '2025-05-01'),
+('Tanya Agarwal',  'tanya.agarwal@gmail.com',  '9876543231', 'Pune',       24, 'F',  33000.50, '2025-05-05'),
+('Deepak Mishra',  'deepak.mishra@gmail.com',  '9876543232', 'Lucknow',    42, 'M', 115000.00, '2025-05-10'),
+('Nandini Rao',    'nandini.rao@gmail.com',    '9876543233', 'Hyderabad',  30, 'F',  67000.25, '2025-05-15'),
+('Amit Choudhary', 'amit.choudhary@gmail.com', '9876543234', 'Jaipur',     38, 'M',  88000.50, '2025-05-20'),
+('Shreya Menon',   'shreya.menon@gmail.com',   '9876543235', 'Kochi',      26, 'F',  42000.00, '2025-05-25'),
+('Raj Malhotra',   'raj.malhotra@gmail.com',   '9876543236', 'Mumbai',     35, 'M',  73000.75, '2025-06-01'),
+('Divya Reddy',    'divya.reddy@gmail.com',    '9876543237', 'Hyderabad',  29, 'F',  51000.50, '2025-06-05'),
+('Mohit Agarwal',  'mohit.agarwal@gmail.com',  '9876543238', 'Noida',      33, 'M',  64000.00, '2025-06-10'),
+('Ayesha Khan',    'ayesha.khan@gmail.com',    '9876543239', 'Mumbai',     27, 'F',  46000.25, '2025-06-15'),
+('Suresh Kumar',   'suresh.kumar@gmail.com',   '9876543240', 'Bangalore',  45, 'M', 125000.00, '2025-06-20'),
+('Pallavi Singh',  'pallavi.singh@gmail.com',  '9876543241', 'Pune',       32, 'F',  58000.50, '2025-06-25'),
+('Yash Thakur',    'yash.thakur@gmail.com',    '9876543242', 'Chandigarh', 28, 'M',  39000.75, '2025-07-01'),
+('Komal Jain',     'komal.jain@gmail.com',     '9876543243', 'Jaipur',     25, 'F',  35000.00, '2025-07-05'),
+('Harsh Vora',     'harsh.vora@gmail.com',     '9876543244', 'Ahmedabad',  39, 'M',  97000.50, '2025-07-10'),
+('Mansi Patel',    'mansi.patel@gmail.com',    '9876543245', 'Ahmedabad',  30, 'F',  55000.25, '2025-07-15'),
+('Akash Soni',     'akash.soni@gmail.com',     '9876543246', 'Indore',     34, 'M',  69000.00, '2025-07-20'),
+('Ritika Sharma',  'ritika.sharma@gmail.com',  '9876543247', 'Delhi',      23, 'F',  31000.75, '2025-07-25'),
+('Gaurav Tiwari',  'gaurav.tiwari@gmail.com',  '9876543248', 'Kanpur',     41, 'M',  83000.50, '2025-08-01'),
+('Muskan Gupta',   'muskan.gupta@gmail.com',   '9876543249', 'Mumbai',     26, 'F',  48000.00, '2025-08-05'),
+('Abhishek Jain',  'abhishek.jain@gmail.com',  '9876543250', 'Indore',     37, 'M',  76000.25, '2025-08-10'),
+('Sakshi Verma',   'sakshi.verma@gmail.com',   '9876543251', 'Pune',       29, 'F',  43000.50, '2025-08-12'),
+('Ravi Shukla',    'ravi.shukla@gmail.com',    '9876543252', 'Lucknow',    44, 'M',  99000.00, '2025-08-15'),
+('Aditi Kapoor',   'aditi.kapoor@gmail.com',   '9876543253', 'Delhi',      27, 'F',  57000.75, '2025-08-18'),
+('Vivek Sharma',   'vivek.sharma@gmail.com',   '9876543254', 'Bangalore',  36, 'M',  72000.50, '2025-08-20'),
+('Tanvi Joshi',    'tanvi.joshi@gmail.com',    '9876543255', 'Nashik',     24, 'F',  34000.00, '2025-08-22'),
+('Sameer Ali',     'sameer.ali@gmail.com',     '9876543256', 'Bhopal',     39, 'M',  86000.25, '2025-08-25'),
+('Preeti Sinha',   'preeti.sinha@gmail.com',   '9876543257', 'Patna',      31, 'F',  52000.50, '2025-08-28'),
+('Naveen Kumar',   'naveen.kumar@gmail.com',   '9876543258', 'Chennai',    43, 'M', 108000.00, '2025-08-30'),
+('Isha Mehta',     'isha.mehta@gmail.com',     '9876543259', 'Mumbai',     28, 'F',  46500.75, '2025-09-01');
+
+
+-- ---------- A. Simple SELECT / WHERE ----------
+SELECT * FROM Customers;
+SELECT Customer_Name, Email, City FROM Customers;
+SELECT Customer_Name, Age, Account_Balance FROM Customers;
+SELECT * FROM Customers WHERE City = 'Pune';
+SELECT * FROM Customers WHERE Gender = 'F';
+SELECT * FROM Customers WHERE Age > 35;
+SELECT * FROM Customers WHERE Account_Balance > 80000;
+SELECT * FROM Customers WHERE Customer_ID = 25;
+SELECT * FROM Customers WHERE Registration_Date = '2025-05-10';
+SELECT * FROM Customers WHERE City <> 'Mumbai';
+
+
+-- ---------- B. Comparison Operators ----------
+SELECT Customer_Name, Age FROM Customers WHERE Age > 40;
+SELECT Customer_Name, Age FROM Customers WHERE Age < 26;
+SELECT Customer_Name, Age FROM Customers WHERE Age >= 30;
+SELECT Customer_Name, Age FROM Customers WHERE Age <= 28;
+SELECT Customer_Name, Account_Balance FROM Customers WHERE Account_Balance >= 100000;
+SELECT Customer_Name, Account_Balance FROM Customers WHERE Account_Balance < 35000;
+SELECT * FROM Customers WHERE Gender <> 'M';
+SELECT * FROM Customers WHERE Registration_Date > '2025-07-01';
+
+
+-- ---------- C. AND ----------
+SELECT * FROM Customers WHERE City = 'Delhi' AND Gender = 'M';
+SELECT * FROM Customers WHERE Age < 30 AND Account_Balance > 45000;
+SELECT * FROM Customers WHERE City = 'Hyderabad' AND Age >= 29;
+SELECT * FROM Customers WHERE Gender = 'F' AND Account_Balance BETWEEN 40000 AND 60000;
+
+
+-- ---------- D. OR ----------
+SELECT * FROM Customers WHERE City = 'Kolkata' OR City = 'Patna';
+SELECT * FROM Customers WHERE Age < 24 OR Age > 42;
+SELECT * FROM Customers WHERE Account_Balance < 32000 OR Account_Balance > 110000;
+SELECT * FROM Customers WHERE City = 'Indore' OR City = 'Bhopal' OR City = 'Nashik';
+
+
+-- ---------- E. NOT ----------
+SELECT * FROM Customers WHERE NOT City = 'Pune';
+SELECT * FROM Customers WHERE NOT Gender = 'M';
+SELECT * FROM Customers WHERE NOT Age = 28;
+SELECT * FROM Customers WHERE City NOT IN ('Mumbai', 'Delhi', 'Pune');
+
+
+-- ---------- F. BETWEEN ----------
+SELECT * FROM Customers WHERE Age BETWEEN 30 AND 40;
+SELECT * FROM Customers WHERE Account_Balance BETWEEN 50000 AND 90000;
+SELECT * FROM Customers WHERE Registration_Date BETWEEN '2025-01-01' AND '2025-03-31';
+SELECT * FROM Customers WHERE Age NOT BETWEEN 26 AND 34;
+
+
+-- ---------- G. LIKE ----------
+SELECT * FROM Customers WHERE Customer_Name LIKE 'S%';
+SELECT * FROM Customers WHERE Customer_Name LIKE '%Sharma';
+SELECT * FROM Customers WHERE Customer_Name LIKE '%Kap%';
+SELECT * FROM Customers WHERE Customer_Name LIKE '%ya%';
+SELECT * FROM Customers WHERE City LIKE 'B%';
+SELECT * FROM Customers WHERE City LIKE '%pur';
+SELECT * FROM Customers WHERE Customer_Name LIKE 'R____ %';
+SELECT * FROM Customers WHERE Phone LIKE '98765432_5';
+SELECT * FROM Customers WHERE Email LIKE 'a%';
+SELECT * FROM Customers WHERE Customer_Name NOT LIKE 'A%';
+
+
+-- ---------- H. IS NULL / IS NOT NULL ----------
+SELECT * FROM Customers WHERE City IS NULL;
+SELECT * FROM Customers WHERE Email IS NULL;
+SELECT * FROM Customers WHERE Phone IS NOT NULL;
+SELECT * FROM Customers WHERE Registration_Date IS NOT NULL;
+
+
+-- ---------- I. DISTINCT ----------
+SELECT DISTINCT City FROM Customers;
+SELECT DISTINCT Gender FROM Customers;
+SELECT DISTINCT Age FROM Customers;
+SELECT DISTINCT City, Gender FROM Customers;
+SELECT COUNT(DISTINCT City) AS Total_Cities FROM Customers;
+
+
+-- ---------- J. Aggregate Functions ----------
+SELECT COUNT(*) AS Total_Customers FROM Customers;
+SELECT SUM(Account_Balance)  AS Total_Deposit   FROM Customers;
+SELECT AVG(Account_Balance)  AS Average_Balance FROM Customers;
+SELECT MAX(Account_Balance)  AS Highest_Balance FROM Customers;
+SELECT MIN(Account_Balance)  AS Lowest_Balance  FROM Customers;
+SELECT MAX(Age) AS Oldest, MIN(Age) AS Youngest FROM Customers;
+SELECT COUNT(*) AS Male_Count   FROM Customers WHERE Gender = 'M';
+SELECT COUNT(*) AS Female_Count FROM Customers WHERE Gender = 'F';
+
+
+-- ---------- K. GROUP BY ----------
+SELECT City, COUNT(*) AS Customers_Count FROM Customers GROUP BY City;
+SELECT City, SUM(Account_Balance) AS City_Total   FROM Customers GROUP BY City;
+SELECT City, AVG(Account_Balance) AS City_Average FROM Customers GROUP BY City;
+SELECT City, MAX(Account_Balance) AS Top_Balance  FROM Customers GROUP BY City;
+SELECT Gender, COUNT(*) AS Total FROM Customers GROUP BY Gender;
+SELECT Gender, AVG(Age) AS Average_Age FROM Customers GROUP BY Gender;
+SELECT Gender, MIN(Account_Balance) AS Lowest FROM Customers GROUP BY Gender;
+SELECT City, Gender, COUNT(*) AS Total FROM Customers GROUP BY City, Gender;
+
+
+-- ---------- L. GROUP BY + HAVING ----------
+SELECT City, COUNT(*) AS Total FROM Customers
+GROUP BY City HAVING COUNT(*) >= 3;
+
+SELECT City, SUM(Account_Balance) AS City_Total FROM Customers
+GROUP BY City HAVING SUM(Account_Balance) > 150000;
+
+SELECT City, AVG(Account_Balance) AS City_Average FROM Customers
+GROUP BY City HAVING AVG(Account_Balance) >= 70000;
+
+SELECT Gender, AVG(Age) AS Average_Age FROM Customers
+GROUP BY Gender HAVING AVG(Age) > 30;
